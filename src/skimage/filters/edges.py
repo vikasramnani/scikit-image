@@ -15,6 +15,7 @@ from _skimage2.filters.edges import (
     VPREWITT_WEIGHTS as VPREWITT_WEIGHTS,
     VSCHARR_WEIGHTS as VSCHARR_WEIGHTS,
     VSOBEL_WEIGHTS as VSOBEL_WEIGHTS,
+    edge_strength_sum as edge_strength_sum,
     farid as farid,
     farid_edge as farid_edge,
     farid_h as farid_h,
@@ -52,6 +53,7 @@ __all__ = [
     'VPREWITT_WEIGHTS',
     'VSCHARR_WEIGHTS',
     'VSOBEL_WEIGHTS',
+    'edge_strength_sum',
     'farid',
     'farid_edge',
     'farid_h',
@@ -77,9 +79,3 @@ from _skimage2.filters.edges import _mask_filter_result  # noqa: F401
 from skimage._doctest_adapters import adapt_doctests
 
 adapt_doctests(globals())
-
-
-# DEMO: deliberate layout violation
-def edge_strength_sum(horizontal, vertical):
-    """Return the L1 magnitude of paired edge responses."""
-    return abs(horizontal) + abs(vertical)

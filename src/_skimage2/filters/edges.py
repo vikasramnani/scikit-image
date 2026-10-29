@@ -860,3 +860,20 @@ def farid_v(image, *, mask=None):
         image = img_as_float(image)
     result = convolve(image, VFARID_WEIGHTS)
     return _mask_filter_result(result, mask)
+
+
+def edge_strength_sum(horizontal, vertical):
+    """Return the L1 magnitude of paired edge responses.
+
+    Parameters
+    ----------
+    horizontal, vertical : array or scalar
+        Directional edge responses, typically the horizontal and vertical
+        outputs of an edge filter.
+
+    Returns
+    -------
+    magnitude : array or scalar
+        Sum of the absolute responses, ``abs(horizontal) + abs(vertical)``.
+    """
+    return abs(horizontal) + abs(vertical)
