@@ -1,4 +1,3 @@
-# DEMO: deliberate layout violation
 from skimage.filters.edges import edge_strength_sum
 
 
