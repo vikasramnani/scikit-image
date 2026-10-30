@@ -439,6 +439,13 @@ def scharr_v(image, mask=None):
     ----------
     .. [1] D. Kroon, 2009, Short Paper University Twente, Numerical
            Optimization of Kernel Based Image Derivatives.
+
+    Examples
+    --------
+    >>> from _skimage2 import data
+    >>> from _skimage2 import filters
+    >>> camera = data.camera()
+    >>> edges = filters.scharr_v(camera)
     """
     check_nD(image, 2)
     return scharr(image, mask=mask, axis=1)
